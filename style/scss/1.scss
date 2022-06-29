@@ -1,0 +1,111 @@
+$grayColor : #ebeaea ;
+
+@mixin mps($padding , $margin , $width , $height){
+    padding: $padding;
+    margin: $margin;
+    width: $width;
+    height: $height;
+}
+
+* , *::before , *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+.general{
+    @include mps(1.3rem , 0 , 45rem , fit-content);
+    border-radius: 0.5rem;
+    background-color: $grayColor;
+    input , select , textarea{
+        @include mps(0.5rem , 0, 100% , 100%);
+        border: 1px solid #cac9c9;
+        border-radius: 0.2rem;
+        margin-top: 0.3rem;
+    }
+    input[type='submit']{
+        background-color: #05b381;
+        color: #fff;
+        border: none;
+        border-radius: 0.2rem;
+        width: 10%;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            opacity:0.7;
+        }
+
+        @media (max-width : 576px){
+            width: 100%;
+        }
+    }
+    div{
+        margin-bottom: 0.7rem;
+    }
+    .valid{
+        color: red;
+        font-size: 0.8rem;
+        margin-top: 0.2rem;
+        display: none;
+    }
+    .input-invalid{
+        border: 2px solid red ;
+    }
+    .invalid{
+        display: block;
+    }
+}
+
+.modal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(201 , 201 , 201 , 0.65);
+    z-index: 1;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+
+    .box-modal{
+        @include mps(2rem , 0 , 32% , 25%);
+        background-color: #fff;
+        border: 1px solid $grayColor;
+        box-shadow: -6px 9px 20px 0px grey;
+        border-radius: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+
+        hr{
+            width: 100%;
+            margin: 0.9rem 0;
+        }
+
+        .title{
+            color: #19bf19;
+            
+        }
+
+        span{
+            color: red;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width:769px){
+            @include mps(1rem , 0 , 80% , 20%)
+        }
+    }
+
+
+
+}
