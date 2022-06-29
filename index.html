@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>template form scss</title>
+    <link rel="stylesheet" href="style/css/1.min.css">
+</head>
+<body>
+    <div class="general">
+        <form>
+            <div>
+                <label for="name">Fist Name</label><br>
+                <input type="text" id="name" placeholder="Your name.." onblur="blurHandler('name')"><br>
+                <span class="valid" id="display-name">Your First Name is invalid!</span>
+            </div>
+            <div>
+                <label for="last">Last Name</label><br>
+                <input type="text" id="last" placeholder="Your last name.." onblur="blurHandler('last')"><br>
+                <span class="valid" id="display-last">Your Last Name is invalid!</span>
+            </div>
+            <div>
+                <label for="country">country</label><br>
+                <select name="country" id="country">
+                    <option value="iran">Iran</option>
+                    <option value="germany">Germany</option>
+                    <option value="france">France</option>
+                </select>
+            </div>
+            <div>
+                <label for="subject">Subject</label><br>
+                <textarea name="subject" id="subject" cols="30" rows="10" placeholder="Write something.."></textarea>
+            </div>
+            <input type="submit" id="submit" onclick="submitHandler(event)">
+        </form>
+    </div>
+
+    <div class="modal">
+        <div class="box-modal">
+            <h1 class="title">SUCCESS!</h1>
+            <hr>
+            <p class="content">Your information was successfully registered!</p>
+            <span>(the form will be reset in 8 seconds)</span>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
